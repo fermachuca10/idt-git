@@ -1,3 +1,0 @@
-CAMBIO TEMPORAL
-Este archivo es un experimento de la Clase 17.
-El siguiente commit revertirá este cambio y recuperará el árbol anterior.
