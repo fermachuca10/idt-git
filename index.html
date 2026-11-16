@@ -3,22 +3,49 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Clase 17 | Mis tareas</title>
+  <meta name="description" content="Práctica educativa de Git y control de versiones.">
+  <title>Clase 17 | Mis tareas con Git</title>
+  <link rel="stylesheet" href="assets/styles.css">
+  <script src="assets/app.js" defer></script>
 </head>
 <body>
-  <header>
-    <h1>Mis tareas</h1>
-    <p>Proyecto práctico de Git · Clase 17</p>
+  <header class="site-header">
+    <div class="shell">
+      <div class="topbar"><span class="brand">GitLab · Práctica</span><span class="course-label">Desarrollo Web Full Stack · Clase 17</span></div>
+      <section class="hero">
+        <div class="eyebrow">Control de versiones</div>
+        <h1>Organizá tus tareas,<br>aprendé Git.</h1>
+        <p>Una aplicación de ejemplo para demostrar commits, ramas, Pull Requests y trabajo colaborativo con un historial verificable en GitHub.</p>
+      </section>
+    </div>
   </header>
-  <main>
-    <h2>Primera versión</h2>
-    <p>Esta es la estructura HTML inicial. En las siguientes ramas se incorporarán estilos e interactividad.</p>
-    <ul>
-      <li>Aprender git add y git commit</li>
-      <li>Crear ramas y fusionar cambios</li>
-      <li>Practicar la reversión de un commit</li>
-    </ul>
+  <main class="shell main">
+    <section class="panel" aria-label="Administrador de tareas">
+      <div class="stats">
+        <div class="stat"><span>Total</span><strong id="total-count">0</strong></div>
+        <div class="stat"><span>Pendientes</span><strong id="pending-count">0</strong></div>
+        <div class="stat"><span>Completadas</span><strong id="completed-count">0</strong></div>
+      </div>
+      <h2 class="section-title">Mis tareas</h2>
+      <p class="intro">Agregá, completá y filtrá tareas. Los datos se guardan en este navegador.</p>
+      <form id="task-form" class="task-form">
+        <label for="task-input" class="sr-only" style="position:absolute;left:-9999px">Nueva tarea</label>
+        <input id="task-input" class="task-input" type="text" name="tarea" placeholder="Ej.: Practicar git commit" maxlength="120" required>
+        <button class="primary" type="submit">+ Agregar tarea</button>
+      </form>
+      <div class="toolbar">
+        <nav class="filters" aria-label="Filtrar tareas">
+          <button class="filter active" data-filter="all" aria-pressed="true" type="button">Todas</button>
+          <button class="filter" data-filter="pending" aria-pressed="false" type="button">Pendientes</button>
+          <button class="filter" data-filter="completed" aria-pressed="false" type="button">Completadas</button>
+        </nav>
+        <button id="clear-completed" class="subtle" type="button">Limpiar completadas</button>
+      </div>
+      <ul class="task-list" id="task-list" aria-live="polite"></ul>
+      <p id="empty-state" class="empty">Todavía no hay tareas para mostrar.</p>
+      <p id="feedback" class="feedback" role="status"></p>
+    </section>
   </main>
-  <footer>Git: cada cambio cuenta una historia.</footer>
+  <footer class="footer">Proyecto académico · Clase 17 · Git y GitHub</footer>
 </body>
 </html>
